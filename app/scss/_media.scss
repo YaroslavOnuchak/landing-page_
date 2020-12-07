@@ -1,0 +1,126 @@
+._container {
+  width: $maxWidthContainer + px;
+  margin: 0 auto;
+  height: 100%;
+  @media (max-width: $md1+px) {
+    width: 970px;
+  }
+  @media (max-width: $md2+px) {
+    width: 95%;
+  }
+  @media (max-width: $md3+px) {
+    width: 98%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .header-content__about {
+    text-shadow: 0 0 5px black;
+  }
+  .main__assortment {
+    min-height: 699px;
+    overflow: hidden;
+    .assortment__wrap {
+      padding: 30px 0 50px;
+      justify-content: space-evenly;
+      .assortment__type {
+        padding-bottom: 17px;
+      }
+      .assortment__img {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  .main__about {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .slider-item {
+    position: relative;
+    max-width: 250px;
+    margin-right: 25px;
+    &__img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+@media screen and (max-width: 970px) {
+  .main__assortment {
+    min-height: 550px;
+    .assortment__wrap {
+      padding: 30px 0 0px;
+    }
+  }
+  .main__about {
+    min-height: 100px;
+    padding: 20px 5%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  body {
+    line-height: normal;
+  }
+  .header-content {
+    &__wrap {
+      margin: 10px 0 0 !important;
+    }
+    &__about {
+      .title {
+        margin-bottom: 1rem;
+      }
+      p {
+        min-height: 0px;
+        margin-bottom: 1rem;
+      }
+    }
+    .title {
+      &::before {
+        bottom: -10px;
+      }
+    }
+  }
+  .header-content__links {
+    display: flex;
+    flex-direction: row;
+    right: 9.5%;
+    top: 1%;
+    a {
+      margin-right: 1.7rem;
+    }
+  }
+  .main__assortment {
+    min-height: 0px;
+    margin-bottom: 70px;
+    .assortment__wrap {
+      padding: 20px 0 50px;
+      .assortment__type {
+        padding-bottom: 20px;
+        width: 47%;
+        .assortment__img {
+          padding-bottom: 4px;
+          img {
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .assortment .title::before,
+  .main__slider .title::before {
+    bottom: -5px;
+  }
+  .main__about {
+    flex-direction: column;
+    min-height: 100px !important;
+    padding: 0;
+    .about-info {
+      border: 1px solid white;
+      width: 100%;
+    }
+    .line-vertical {
+      display: none;
+    }
+  }
+}

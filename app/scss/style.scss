@@ -68,6 +68,14 @@ header {
     height: 100%;
     justify-content: space-between;
     min-width: 555px;
+    &__nav {
+      input {
+        display: none;
+      }
+      .burger-line {
+        display: none;
+      }
+    }
     &__logo {
       align-self: center;
     }
@@ -348,6 +356,7 @@ header {
   }
 }
 .main__about {
+  overflow: hidden;
   position: relative;
   width: 1220px;
   margin: 0 auto;
@@ -356,6 +365,7 @@ header {
   background-color: $colorDark;
   min-height: 100px;
   display: flex;
+  flex: 1 1 auto;
   justify-content: space-between;
   align-items: center;
   padding: 25px 10%;
@@ -383,8 +393,13 @@ header {
 .line-vertical {
   display: inline-block;
   background-color: $colorLight;
-  width: 2px;
-  height: 100%;
+  width: 10%;
+  height: 2px;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
 }
 .wrap-slick-carousel {
   margin-bottom: 80px;
@@ -412,7 +427,6 @@ header {
     background: url(../img/arrow-right.svg) 0 0 /100% no-repeat;
     right: 40%;
   }
-  // /* Точки (булиты) */
   .slick-dots {
     display: flex;
     align-items: center;
@@ -446,7 +460,7 @@ header {
   position: relative;
   max-width: 250px;
   margin-right: 25px;
-  @include adaptiv-font(16, 14);
+  @include adaptiv-font(16, 10);
   line-height: 24px;
 
   &:hover .mask {

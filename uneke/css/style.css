@@ -801,7 +801,6 @@ header {
     -moz-transform: scale(1.2);
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
-    opacity: 0.7;
   }
 
   50% {
@@ -810,7 +809,6 @@ header {
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
-    opacity: 0.5;
   }
 
   100% {
@@ -819,7 +817,6 @@ header {
     -moz-transform: scale(0.8);
     -ms-transform: scale(0.8);
     -o-transform: scale(0.8);
-    opacity: 1;
   }
 }
 
@@ -1139,11 +1136,10 @@ header {
 @media screen and (max-width: 970px) {
   .top-header__wrap .nav-logo {
     justify-content: space-between;
-    min-width: 0px;
+    min-width: 60%;
   }
 
   #menuToggle {
-    margin: 0 2rem;
     display: inline-block;
     position: relative;
     -webkit-user-select: none;
@@ -1233,7 +1229,7 @@ header {
     min-width: 344px;
     min-height: 359px;
     justify-content: space-evenly;
-    right: 200px;
+    right: 100vh;
     top: 70px;
     z-index: 22;
     transition: 0.5s ease-in-out;
@@ -1241,6 +1237,11 @@ header {
     -moz-transition: 0.5s ease-in-out;
     -ms-transition: 0.5s ease-in-out;
     -o-transition: 0.5s ease-in-out;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
   }
 
   #menu li {
@@ -1250,7 +1251,26 @@ header {
   }
 
   #menuToggle input:checked ~ ul {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
     right: -100%;
+  }
+
+  .header-content {
+    min-height: 80vh;
+  }
+
+  .header-content .arrow-down {
+    animation: puls 5s ease-in-out infinite alternate;
+    left: 80%;
+    bottom: 5%;
+    transition: 0.5s;
+    filter: drop-shadow(0 -11px 3px red);
+    -webkit-animation: puls 5s ease-in-out infinite alternate;
+    -webkit-filter: drop-shadow(0 -11px 3px #333333);
   }
 
   .main__assortment {
@@ -1311,10 +1331,6 @@ header {
 @media screen and (min-width: 320px) and (max-width: 767px) {
   body {
     line-height: normal;
-  }
-
-  .header-content__wrap {
-    margin: 10px 0 0 !important;
   }
 
   .header-content__about .title {

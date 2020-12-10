@@ -21,7 +21,6 @@ const search_input = document.search.elements[0];
 console.log("search_input.value :>> ", search_input.value.length);
 // nav-logo__nav   nav-logo nav-logo__logo
 search.addEventListener("click", function () {
-  console.log("cliiiii :>> ");
   if (!search_input.classList.contains("show--input")) {
     search_input.classList.add("show--input");
   } else if (search_input.value == 0) {

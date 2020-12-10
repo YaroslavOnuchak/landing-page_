@@ -127,10 +127,10 @@
     flex-direction: column;
   }
   .menu {
-    display: block;
+    display: none;
     flex-direction: column;
     position: absolute;
-    background-color: red;
+    // background-color: red;
     min-width: 344px;
     min-height: 359px;
     justify-content: space-evenly;

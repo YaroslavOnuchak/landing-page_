@@ -1,20 +1,21 @@
 @@include("_libs.min.js");
 // @@include("_test.js");
 @@include("_script.js");
+let countSlidesToShow = 5;
+window.addEventListener("resize", resizeW());
 
-$(document).ready(function () {
-  let countSlidesToShow = 5;
-  function resizeW() {
-    if (window.innerWidth < 700 && window.innerWidth > 400) {
-      countSlidesToShow = 4;
-    } else if (window.innerWidth < 400) {
-      countSlidesToShow = 3;
-    } else {
-      countSlidesToShow = 5;
-    }
+function resizeW() {
+  if (window.innerWidth < 700 && window.innerWidth > 400) {
+    countSlidesToShow = 4;
+  } else if (window.innerWidth < 400) {
+    countSlidesToShow = 3;
+  } else {
+    countSlidesToShow = 5;
   }
-  resizeW();
-
+}
+resizeW();
+$(document).ready(function () {
+  console.log("redy :>> ");
   $(".slider").slick({
     slidesToShow: countSlidesToShow,
     arrows: true,
@@ -34,6 +35,5 @@ $(document).ready(function () {
     pauseOnHover: false,
     easing: "cubic-bezier(.37,-0.58,.84,1.04)",
   });
-
-  $(window).resize(resizeW);
 });
+

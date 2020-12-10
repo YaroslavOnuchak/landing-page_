@@ -526,6 +526,7 @@ body {
   font-family: "Poppins";
   color: #333333;
   letter-spacing: 0.01em;
+  overflow-x: hidden;
 }
 
 li {
@@ -578,40 +579,48 @@ header {
   align-items: center;
 }
 
-.top-header__wrap .nav-logo {
+.top-header__wrap .logo {
   display: flex;
   font-family: "Gilroy";
-  line-height: 18px;
   height: 100%;
-  justify-content: space-between;
-  min-width: 555px;
+  align-items: center;
 }
 
-.top-header__wrap .nav-logo__nav input {
+.top-header__wrap .nav {
+  display: flex;
+  line-height: 18px;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.top-header__wrap .nav input {
   display: none;
 }
 
-.top-header__wrap .nav-logo__nav .burger-line {
+.top-header__wrap .nav .burger-line {
   display: none;
 }
 
-.top-header__wrap .nav-logo__logo {
+.top-header__wrap__logo {
   align-self: center;
 }
 
-.top-header__wrap .nav-logo .menu {
+.top-header__wrap .menu {
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-.top-header__wrap .nav-logo .menu .dropdown {
+.top-header__wrap .menu .dropdown {
   position: relative;
   cursor: pointer;
 }
 
-.top-header__wrap .nav-logo .menu .dropdown::before,
-.top-header__wrap .nav-logo .menu .dropdown::after {
+.top-header__wrap .menu .dropdown::before,
+.top-header__wrap .menu .dropdown::after {
   content: "";
   right: -10%;
   bottom: 5px;
@@ -621,7 +630,7 @@ header {
   background-color: white;
 }
 
-.top-header__wrap .nav-logo .menu .dropdown::before {
+.top-header__wrap .menu .dropdown::before {
   transform: skew(45deg);
   -webkit-transform: skew(45deg);
   -moz-transform: skew(45deg);
@@ -629,7 +638,7 @@ header {
   -o-transform: skew(45deg);
 }
 
-.top-header__wrap .nav-logo .menu .dropdown::after {
+.top-header__wrap .menu .dropdown::after {
   transform: skew(-45deg) translateX(5px);
   -webkit-transform: skew(-45deg) translateX(5px);
   -moz-transform: skew(-45deg) translateX(5px);
@@ -637,11 +646,11 @@ header {
   -o-transform: skew(-45deg) translateX(5px);
 }
 
-.top-header__wrap .nav-logo .menu .dropdown:hover .dropdown__list {
+.top-header__wrap .menu .dropdown:hover .dropdown__list {
   display: block;
 }
 
-.top-header__wrap .nav-logo .menu .dropdown .dropdown__list {
+.top-header__wrap .menu .dropdown .dropdown__list {
   display: none;
   width: 200%;
   box-shadow: 0 0 5px white;
@@ -652,15 +661,15 @@ header {
   background-color: #333333;
 }
 
-.top-header__wrap .nav-logo .menu .dropdown .dropdown__list li {
+.top-header__wrap .menu .dropdown .dropdown__list li {
   margin: 10px;
 }
 
-.top-header__wrap .nav-logo .menu li {
+.top-header__wrap .menu li {
   margin-right: 30px;
 }
 
-.top-header__wrap .nav-logo .menu li:last-child {
+.top-header__wrap .menu li:last-child {
   margin-right: 0;
 }
 
@@ -681,13 +690,13 @@ header {
   outline: none;
   transition: 0.5s;
   visibility: hidden;
-  margin-right: 10px;
-  border-radius: 5px;
-  padding: 0 5px;
   width: 0px;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .top-header__wrap .search-favorite input[type="text"].show--input {
+  padding: 0 5px;
   width: 100px;
   visibility: visible;
 }
@@ -1151,10 +1160,10 @@ header {
     width: 40px;
     height: 40px;
     position: absolute;
-    top: 5px;
-    left: 0x;
+    top: -10px;
+    left: 0px;
     cursor: pointer;
-    opacity: 0;
+    opacity: 0.5;
     z-index: 2;
   }
 
@@ -1165,7 +1174,7 @@ header {
     margin-bottom: 5px;
     position: relative;
     border-radius: 3px;
-    top: 15px;
+    top: 0px;
     background: white;
     z-index: 1;
     transform-origin: 4px 0px;
@@ -1225,13 +1234,12 @@ header {
     display: block;
     flex-direction: column;
     position: absolute;
-    background-color: #333333;
+    background-color: red;
     min-width: 344px;
     min-height: 359px;
     justify-content: space-evenly;
-    right: 100vh;
-    top: 70px;
-    z-index: 22;
+    top: 10px;
+    z-index: 222;
     transition: 0.5s ease-in-out;
     -webkit-transition: 0.5s ease-in-out;
     -moz-transition: 0.5s ease-in-out;
@@ -1260,7 +1268,12 @@ header {
   }
 
   .header-content {
-    min-height: 80vh;
+    min-height: 75vh;
+  }
+
+  .header-content__wrap {
+    display: flex;
+    margin: 0 0 10px;
   }
 
   .header-content .arrow-down {

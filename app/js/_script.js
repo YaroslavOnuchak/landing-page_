@@ -17,6 +17,7 @@ testWebP(function (support) {
 });
 const search = document.querySelector(".fa-search");
 const search_input = document.search.elements[0];
+const menu = document.querySelector(".menu");
 
 console.log("search_input.value :>> ", search_input.value.length);
 // nav-logo__nav   nav-logo nav-logo__logo
@@ -29,3 +30,8 @@ search.addEventListener("click", function () {
     console.log("else :>> ");
   }
 });
+document
+  .querySelector(".burger-checkbox")
+  .addEventListener("click", function () {
+    menu.classList.toggle("burger--open");
+  });

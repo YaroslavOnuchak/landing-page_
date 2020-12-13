@@ -71,6 +71,7 @@ header {
   }
   .nav {
     display: flex;
+    height: 100%;
     line-height: 18px;
     // transform: translateX(-50%);
     // -webkit-transform: translateX(-50%);
@@ -91,14 +92,30 @@ header {
     display: flex;
     align-items: center;
     height: 100%;
+    white-space: nowrap;
+    li {
+      margin-right: 30px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        background: rgba(0, 0, 0, 0.231);
+      }
+    }
     .dropdown {
       position: relative;
+      padding-right: 5%;
       cursor: pointer;
       &::before,
       &::after {
         content: "";
-        right: -10%;
-        bottom: 5px;
+        right: 10%;
+        top: 45%;
         position: absolute;
         width: 2px;
         height: 5px;
@@ -121,28 +138,24 @@ header {
       &:hover {
         .dropdown__list {
           display: flex;
-          flex-direction: column;
         }
-      }
-    }
-    li {
-      margin-right: 30px;
-      &:last-child {
-        margin-right: 0;
       }
     }
   }
   .dropdown__list {
     display: none;
+    flex-direction: column;
     width: 200%;
     box-shadow: 0 0 5px $colorLight;
     position: absolute;
-    left: 0%;
+    text-align: center;
+    left: 5%;
     top: 100%;
     z-index: 222;
     background-color: $colorDark;
     li {
-      margin: 10px;
+      padding: 10px;
+      margin-right: 0;
     }
   }
 

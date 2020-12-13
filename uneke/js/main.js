@@ -61,6 +61,13 @@ document
   .addEventListener("click", function () {
     menu.classList.toggle("burger--open");
   });
+
+document.querySelectorAll(".dropdown").forEach((ul) => {
+  ul.addEventListener("click", function () {
+    this.classList.toggle("dropdown--open");
+    console.log("this :>> ", this);
+  });
+});
 ;
 let countSlidesToShow = 5;
 window.addEventListener("resize", resizeW());

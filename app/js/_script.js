@@ -36,9 +36,9 @@ document
     menu.classList.toggle("burger--open");
   });
 
-document.querySelectorAll(".dropdown").forEach((ul) => {
-  ul.addEventListener("click", function () {
-    this.classList.toggle("dropdown--open");
-    console.log("this :>> ", this);
+document.querySelectorAll(".dropdown a").forEach((link) => {
+  link.addEventListener("click", function () {
+    this.parentElement.classList.toggle("dropdown--open");
+    // console.log("this :>> ", this.parentElement);
   });
 });
